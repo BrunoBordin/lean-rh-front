@@ -5,6 +5,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { TecnologiaService } from '../../../../services/tecnologiaService';
 import { Router } from '@angular/router';
 import { CadastroEntrevistaComponent } from '../cadastro-entrevista/cadastro-entrevista.component';
+import { ServiceRh } from '../../../../services/serviceRh';
 
 
 @Component({
@@ -19,7 +20,7 @@ export class ListaEntrevistaComponent implements OnInit, AfterViewInit {
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private service: TecnologiaService, private dialog: MatDialog, private router: Router) { }
+  constructor(private service: ServiceRh, private dialog: MatDialog, private router: Router) { }
 
   navigateTo(route: string): void {
     this.router.navigate([route]);
@@ -54,22 +55,17 @@ export class ListaEntrevistaComponent implements OnInit, AfterViewInit {
   }
 
   public loadData(): void {
-    this.service.obterTecnologias().subscribe((data: any) => {
+    this.service.obterEntrevistas().subscribe((data: any) => {
       this.dataSource.data = data;
     });
   }
 
   editElement(element: any): void {
-    this.service.atualizarTecnologia(element).subscribe(() => {
-      this.recarregar();
-    });
+
   }
 
   deleteElement(element: any): void {
-    console.log(element);
-    this.service.excluirTecnologia(element).subscribe(() => {
-      this.recarregar();
-    });
+
   }
 
   applyFilter(event: Event): void {

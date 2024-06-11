@@ -3,25 +3,32 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
 import { RelatorioService } from '../../../services/relatorioService';
+import { VagaService } from '../../../services/vagaService';
 
 @Component({
   selector: 'app-relatorio',
-  standalone: true,
-  imports: [],
   templateUrl: './relatorio.component.html',
   styleUrl: './relatorio.component.scss'
 })
 export class RelatorioComponent implements OnInit, AfterViewInit {
   displayedColumns = ['idVagaTecnologiaRequisito', 'nomeVaga', 'nomeTecnologia', 'peso', 'actions'];
-
+  selectedVaga: string | undefined;
   dataSource = new MatTableDataSource<any>([]);
+  vagas: any[] = [];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private service: RelatorioService, private dialog: MatDialog) { }
+  constructor(private vagaService: VagaService, private service: RelatorioService) { }
 
   ngOnInit(): void {
-    this.loadData();
+
+    this.vagaService.obterVagas().subscribe(data => {
+      this.vagas = data;
+    });
+  }
+
+  onVagaSelected(id: string) {
+    this.selectedVaga = id;
   }
 
   ngAfterViewInit(): void {
@@ -29,7 +36,8 @@ export class RelatorioComponent implements OnInit, AfterViewInit {
   }
 
   public loadData(): void {
-    this.service.obterVagasVagasRequisitos().subscribe((data: any) => {
+
+    this.service.gerarRelatorio().subscribe((data: any) => {
       this.dataSource.data = data;
     });
   }
@@ -39,7 +47,8 @@ export class RelatorioComponent implements OnInit, AfterViewInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  public recarregar(): void {
+
+  onPesquisar(): void {
     this.loadData();
   }
 

@@ -25,6 +25,7 @@ import { CadastraVagaPesoComponent } from './componentes/vaga-peso/cadastra-vaga
 import { VagaPesoComponent } from './componentes/vaga-peso/listaVagasPeso/vaga-peso.component';
 import { ListaEntrevistaComponent } from './componentes/entrevista/lista-entrevista/lista-entrevista.component';
 import { CadastroEntrevistaComponent } from './componentes/entrevista/cadastro-entrevista/cadastro-entrevista.component';
+import { RelatorioComponent } from './componentes/relatorio/relatorio.component';
 
 @NgModule({
     declarations: [AppComponent
@@ -35,6 +36,7 @@ import { CadastroEntrevistaComponent } from './componentes/entrevista/cadastro-e
         , CadastraVagaPesoComponent
         , VagaPesoComponent
         , CadastroEntrevistaComponent
+        , RelatorioComponent
         , ListaEntrevistaComponent],
     imports: [
         BrowserModule,
