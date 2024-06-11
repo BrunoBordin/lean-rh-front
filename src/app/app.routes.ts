@@ -6,13 +6,16 @@ import { VagaPesoComponent } from './componentes/vaga-peso/listaVagasPeso/vaga-p
 import { ListaEntrevistaComponent } from './componentes/entrevista/lista-entrevista/lista-entrevista.component';
 import { CadastroEntrevistaComponent } from './componentes/entrevista/cadastro-entrevista/cadastro-entrevista.component';
 import { AppComponent } from './app.component';
+import { RelatorioComponent } from './componentes/relatorio/relatorio.component';
 
 const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'home', component: AppComponent },
     { path: 'tecnologia', component: TecnologiaComponent },
     { path: 'entrevista', component: ListaEntrevistaComponent },
-    { path: 'cadastro-entrevista', component: CadastroEntrevistaComponent }
+    { path: 'cadastro-entrevista', component: CadastroEntrevistaComponent },
+    { path: 'vaga-peso', component: VagaPesoComponent },
+    { path: 'relatorio', component: RelatorioComponent }
 ];
 
 @NgModule({

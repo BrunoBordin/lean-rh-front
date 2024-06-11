@@ -6,7 +6,7 @@
             <mat-label>Vaga</mat-label>
             <select matNativeControl [(ngModel)]="selectedVaga" (ngModelChange)="onVagaSelected($event)">
                 <option value="" selected></option>
-                <option *ngFor="let vaga of vagas" [value]="vaga.id">{{vaga.nome}}</option>
+                <option *ngFor="let vaga of vagas" [value]="vaga.id">{{vaga.descricao}}</option>
             </select>
         </mat-form-field>
 
@@ -21,7 +21,7 @@
             <mat-label>Tecnologia</mat-label>
             <select matNativeControl [(ngModel)]="selectedTecnologia" (ngModelChange)="onTecnologiaSelected($event)">
                 <option value="" selected></option>
-                <option *ngFor="let tec of tecnologia" [value]="tec.id">{{tec.nome}}</option>
+                <option *ngFor="let tec of tecnologia" [value]="tec.idTecnologia">{{tec.nomeTecnologia}}</option>
             </select>
         </mat-form-field>
     </div>
