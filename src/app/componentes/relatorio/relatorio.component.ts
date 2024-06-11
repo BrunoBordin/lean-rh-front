@@ -11,7 +11,7 @@ import { VagaService } from '../../../services/vagaService';
   styleUrl: './relatorio.component.scss'
 })
 export class RelatorioComponent implements OnInit, AfterViewInit {
-  displayedColumns = ['idVagaTecnologiaRequisito', 'nomeVaga', 'nomeTecnologia', 'peso', 'actions'];
+  displayedColumns = ['candidato', 'pontuacao'];
   selectedVaga: string | undefined;
   dataSource = new MatTableDataSource<any>([]);
   vagas: any[] = [];
@@ -37,7 +37,8 @@ export class RelatorioComponent implements OnInit, AfterViewInit {
 
   public loadData(): void {
 
-    this.service.gerarRelatorio().subscribe((data: any) => {
+    this.service.gerarRelatorio(this.selectedVaga).subscribe((data: any) => {
+      console.log(data)
       this.dataSource.data = data;
     });
   }

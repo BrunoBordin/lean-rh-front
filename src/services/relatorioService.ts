@@ -1,20 +1,20 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Vaga } from '../models/Vaga';
-import { VagaTecnologiaRequisito } from '../models/VagaTecnologiaRequisito';
+import { Relatorio } from '../models/Relatorio';
 
 @Injectable({
     providedIn: 'root'
 })
 export class RelatorioService {
+
     private apiUrl = 'https://localhost:7097';
 
     constructor(private http: HttpClient) { }
 
-    gerarRelatorio(): Observable<Vaga[]> {
-        const url = `${this.apiUrl}/${'Vaga/listarTecnologia/requisito'}`;
-        return this.http.get<Vaga[]>(url);
+    gerarRelatorio(id: any): Observable<Relatorio[]> {
+        const url = `${this.apiUrl}/${'RelatorioRh/'}${id}`;
+        return this.http.get<Relatorio[]>(url);
     }
 
 }
