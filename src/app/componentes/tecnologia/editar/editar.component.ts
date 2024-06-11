@@ -29,11 +29,11 @@ export class ModalEditarTecnologiaComponent {
       console.log(this.tecnologiaForm.value);
       this.tecnologiaService.atualizarTecnologia(this.tecnologiaForm.value).subscribe(
         response => {
-          console.log('Tecnologia atualizada com sucesso', response);
+          console.log('Peso tecnologia atualizad com sucesso', response);
           this.dialogRef.close(true);
         },
         error => {
-          console.error('Erro ao atualizar a tecnologia', error);
+          console.error('Erro ao atualizar a vaga tecnologia', error);
         }
       );
     }

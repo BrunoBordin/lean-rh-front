@@ -1,0 +1,33 @@
+<h1 mat-dialog-title class="modal-header">Entrevista</h1>
+<div mat-dialog-content class="modal-content">
+
+    <div class="form-flex-container">
+        <mat-form-field>
+            <mat-label>Vaga</mat-label>
+            <select matNativeControl [(ngModel)]="selectedVaga" (ngModelChange)="onVagaSelected($event)">
+                <option value="" selected></option>
+                <option *ngFor="let vaga of vagas" [value]="vaga.id">{{vaga.nome}}</option>
+            </select>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Candidato</mat-label>
+            <select matNativeControl [(ngModel)]="selectedCandidato" (ngModelChange)="onCandidatoSelected($event)">
+                <option value="" selected></option>
+                <option *ngFor="let cand of candidato" [value]="cand.id">{{cand.nome}}</option>
+            </select>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Tecnologia</mat-label>
+            <select matNativeControl [(ngModel)]="selectedTecnologia" (ngModelChange)="onTecnologiaSelected($event)">
+                <option value="" selected></option>
+                <option *ngFor="let tec of tecnologia" [value]="tec.id">{{tec.nome}}</option>
+            </select>
+        </mat-form-field>
+    </div>
+
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onCancel()">Cancelar</button>
+    <button mat-button (click)="onSubmit()">Salvar</button>
+</div>

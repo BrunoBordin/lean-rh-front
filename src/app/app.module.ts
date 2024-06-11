@@ -19,13 +19,23 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { ModalCadastroTecnologiaComponent } from './componentes/tecnologia/cadastraTecnologia/cadastro-tecnologia';
 import { ReactiveFormsModule } from '@angular/forms';
-import{ModalEditarTecnologiaComponent} from './componentes/tecnologia/editar/editar.component'
+import { ModalEditarTecnologiaComponent } from './componentes/tecnologia/editar/editar.component'
+import { EditVagaPesoComponent } from './componentes/vaga-peso/edit-vaga-peso/edit-vaga-peso.component';
+import { CadastraVagaPesoComponent } from './componentes/vaga-peso/cadastra-vaga-peso/cadastra-vaga-peso.component';
+import { VagaPesoComponent } from './componentes/vaga-peso/listaVagasPeso/vaga-peso.component';
+import { ListaEntrevistaComponent } from './componentes/entrevista/lista-entrevista/lista-entrevista.component';
+import { CadastroEntrevistaComponent } from './componentes/entrevista/cadastro-entrevista/cadastro-entrevista.component';
 
 @NgModule({
     declarations: [AppComponent
         , TecnologiaComponent
         , ModalCadastroTecnologiaComponent
-        ,ModalEditarTecnologiaComponent],
+        , ModalEditarTecnologiaComponent
+        , EditVagaPesoComponent
+        , CadastraVagaPesoComponent
+        , VagaPesoComponent
+        , CadastroEntrevistaComponent
+        , ListaEntrevistaComponent],
     imports: [
         BrowserModule,
         ReactiveFormsModule,

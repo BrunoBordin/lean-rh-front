@@ -1,4 +1,6 @@
-export interface Tecnologia {
-    id: number | null;
-    nome: string;
-  }
+export interface Vaga {
+  id: number
+  idTecnologia: number
+  idVaga: number
+  peso: number | null;
+}

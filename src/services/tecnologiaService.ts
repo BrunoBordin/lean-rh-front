@@ -31,4 +31,10 @@ export class TecnologiaService {
     console.log("url: " + url);
     return this.http.delete<void>(url);
   }
+  
+  obterTecnologiasEmpresa(id: number): Observable<Tecnologia[]> {
+    const url = `${this.apiUrl}/Tecnologia/porEmpresa/${id}`;
+    return this.http.get<Tecnologia[]>(`${url}`);
+  }
+  
 }
