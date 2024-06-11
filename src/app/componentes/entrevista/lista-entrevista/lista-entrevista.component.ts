@@ -2,7 +2,6 @@ import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
-import { TecnologiaService } from '../../../../services/tecnologiaService';
 import { Router } from '@angular/router';
 import { CadastroEntrevistaComponent } from '../cadastro-entrevista/cadastro-entrevista.component';
 import { ServiceRh } from '../../../../services/serviceRh';
