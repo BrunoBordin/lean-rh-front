@@ -1,0 +1,94 @@
+.parametros-container {
+	width: 1080px;
+	border-radius: 8px;
+	margin: 0 auto;
+	margin-bottom: 50px;
+	border: 1px solid #f0f0f0;
+	padding: 25px;
+	background-color: #fff;
+  }
+  .actions {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+  }
+  
+  .parametros-table {
+	position: relative;
+  }
+  
+  .table-header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	z-index: 10;
+	margin-bottom: 18px;
+  }
+  
+  .actions {
+	display: flex;
+	justify-content: flex-end;
+  }
+  
+  .td-ellipsis {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 475px;
+  }
+  
+  .adiciona-parametro-btn {
+	display: flex;
+	align-items: center;
+  
+	i {
+	  display: flex;
+	  align-items: center;
+	  font-size: 15px;
+	}
+  }
+  
+  .container_fiter {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 20px;
+  
+	.dialog-actions {
+	  display: flex;
+	  align-items: center;
+  
+	  h1 {
+		margin: 0;
+	  }
+	}
+  
+	button {
+	  align-self: center;
+	}
+  }
+  
+  .mat-elevation-z8 {
+	margin-top: 20px;
+  }
+  
+  .full-width-table {
+	width: 100%;
+  
+	.mat-header-cell, .mat-cell {
+	  padding: 8px 16px;
+	}
+  
+	.mat-header-cell {
+	  font-weight: bold;
+	}
+  }
+  
+  .mat-paginator {
+	margin-top: 20px;
+  }
+  
+  .invisible-column {
+	display: none;
+  }
+  

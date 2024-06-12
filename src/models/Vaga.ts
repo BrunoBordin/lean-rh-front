@@ -1,6 +1,6 @@
 export interface Vaga {
-  id: number
-  idTecnologia: number
-  idVaga: number
-  peso: number | null;
+    id: number
+    titulo: string
+    descricao: string
+    aberta: boolean;
 }

@@ -23,7 +23,7 @@ export class CadastraVagaPesoComponent {
 
   onSubmit() {
     if (this.tecnologiaForm.valid) {
-      this.vagaService.adicionarVaga(this.tecnologiaForm.value).subscribe(
+      this.vagaService.adicionarVagaRequisito(this.tecnologiaForm.value).subscribe(
         response => {
           console.log('Vaga Tecnologia Peso cadastrada com sucesso!', response);
           this.dialogRef.close();

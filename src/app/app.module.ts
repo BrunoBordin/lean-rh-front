@@ -26,6 +26,15 @@ import { VagaPesoComponent } from './componentes/vaga-peso/listaVagasPeso/vaga-p
 import { ListaEntrevistaComponent } from './componentes/entrevista/lista-entrevista/lista-entrevista.component';
 import { CadastroEntrevistaComponent } from './componentes/entrevista/cadastro-entrevista/cadastro-entrevista.component';
 import { RelatorioComponent } from './componentes/relatorio/relatorio.component';
+import { ListaEmpresaComponent } from './componentes/empresa/lista-empresa/lista-empresa.component';
+import { CadastraEmpresaComponent } from './componentes/empresa/cadastra-empresa/cadastra-empresa.component';
+import { EditaEmpresaComponent } from './componentes/empresa/edita-empresa/edita-empresa.component';
+import { ListaCandidatoComponent } from './componentes/candidato/lista-candidato/lista-candidato.component';
+import { EditaCandidatoComponent } from './componentes/candidato/edita-candidato/edita-candidato.component';
+import { CadastraCandidatoComponent } from './componentes/candidato/cadastra-candidato/cadastra-candidato.component';
+import { ListaVagaComponent } from './componentes/vaga/lista-vaga/lista-vaga.component';
+import { EditaVagaComponent } from './componentes/vaga/edita-vaga/edita-vaga.component';
+import { CadastraVagaComponent } from './componentes/vaga/cadastra-vaga/cadastra-vaga.component';
 
 @NgModule({
     declarations: [AppComponent
@@ -37,7 +46,16 @@ import { RelatorioComponent } from './componentes/relatorio/relatorio.component'
         , VagaPesoComponent
         , CadastroEntrevistaComponent
         , RelatorioComponent
-        , ListaEntrevistaComponent],
+        , ListaEntrevistaComponent
+        , ListaEmpresaComponent
+        , CadastraEmpresaComponent
+        , EditaEmpresaComponent
+        , ListaCandidatoComponent
+        , EditaCandidatoComponent
+        , CadastraCandidatoComponent
+        , ListaVagaComponent
+        , EditaVagaComponent
+        , CadastraVagaComponent],
     imports: [
         BrowserModule,
         ReactiveFormsModule,
