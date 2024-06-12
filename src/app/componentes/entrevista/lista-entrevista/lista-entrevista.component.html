@@ -6,9 +6,18 @@
 </div>
 <div class="parametros-table">
   <table mat-table [dataSource]="dataSource" class="full-width-table">
-    <ng-container matColumnDef="nome">
+    <ng-container matColumnDef="candidato">
       <th mat-header-cell *matHeaderCellDef> Candidato </th>
-      <td mat-cell *matCellDef="let element" class="td-ellipsis"> {{element.nome}} </td>
+      <td mat-cell *matCellDef="let element" class="td-ellipsis"> {{element.candidato}} </td>
+    </ng-container>
+    <ng-container matColumnDef="vaga">
+      <th mat-header-cell *matHeaderCellDef> Vaga </th>
+      <td mat-cell *matCellDef="let element" class="td-ellipsis"> {{element.vaga}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="tecnologias">
+      <th mat-header-cell *matHeaderCellDef> Tecnologias do candidato </th>
+      <td mat-cell *matCellDef="let element" class="td-ellipsis"> {{element.tecnologias}} </td>
     </ng-container>
 
     <ng-container matColumnDef="actions">

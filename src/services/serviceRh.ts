@@ -5,6 +5,7 @@ import { Entrevista } from '../models/Entrevista';
 import { Candidato } from '../models/Candidato';
 import { TecnologiaEntrevista } from '../models/TecnologiaEntrevista';
 import { EntrevistaVaga } from '../models/EntrevistaVaga';
+import { EntrevistaCandidato } from '../models/EntrevistaCandidato';
 
 @Injectable({
     providedIn: 'root'
@@ -35,5 +36,9 @@ export class ServiceRh {
         return this.http.post<Entrevista>(url, entrevistaVaga.idsTecnologia);
     }
 
+    obterEntrevistasCandidato(): Observable<EntrevistaCandidato[]> {
+        const url = `${this.apiUrl}/${'Candidato/entrevista'}`;
+        return this.http.get<EntrevistaCandidato[]>(url);
+    }
 
 }

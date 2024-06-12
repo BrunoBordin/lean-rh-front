@@ -5,6 +5,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { Router } from '@angular/router';
 import { CadastroEntrevistaComponent } from '../cadastro-entrevista/cadastro-entrevista.component';
 import { CandidatoService } from '../../../../services/candidatoService';
+import { ServiceRh } from '../../../../services/serviceRh';
 
 
 @Component({
@@ -14,12 +15,12 @@ import { CandidatoService } from '../../../../services/candidatoService';
 })
 
 export class ListaEntrevistaComponent implements OnInit, AfterViewInit {
-  displayedColumns = ['nome', 'idTecnologia', 'actions'];
+  displayedColumns = ['candidato', 'vaga', 'tecnologias',  'actions'];
   dataSource = new MatTableDataSource<any>([]);
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private service: CandidatoService, private dialog: MatDialog, private router: Router) { }
+  constructor(private service: ServiceRh, private dialog: MatDialog, private router: Router) { }
 
   navigateTo(route: string): void {
     this.router.navigate([route]);
@@ -54,7 +55,8 @@ export class ListaEntrevistaComponent implements OnInit, AfterViewInit {
   }
 
   public loadData(): void {
-    this.service.obterCandidatos().subscribe((data: any) => {
+    this.service.obterEntrevistasCandidato().subscribe((data: any) => {
+      debugger;
       this.dataSource.data = data;
     });
   }
