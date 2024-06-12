@@ -32,7 +32,7 @@ export class ServiceRh {
 
     adicionarConfigurarEntrevista(entrevistaVaga: EntrevistaVaga): Observable<Entrevista> {
         debugger;
-        const url = `${this.apiUrl}/${'Vaga/candidato/'}${entrevistaVaga.idVaga}/${entrevistaVaga.idCandidato}`;
+        const url = `${this.apiUrl}/${'Vaga/candidato/'}${entrevistaVaga.idCandidato}/${entrevistaVaga.idVaga}`;
         return this.http.post<Entrevista>(url, entrevistaVaga.idsTecnologia);
     }
 

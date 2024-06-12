@@ -27,6 +27,15 @@ export class VagaPesoComponent implements OnInit, AfterViewInit {
     this.dataSource.paginator = this.paginator;
   }
 
+  openDialog(): void {
+    const dialogRef = this.dialog.open(EditVagaPesoComponent, {
+      width: '400px'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.recarregar();
+    });
+  }
   openDialogEdit(element: any): void {
     const dialogRef = this.dialog.open(EditVagaPesoComponent, {
       width: '400px',
@@ -40,6 +49,7 @@ export class VagaPesoComponent implements OnInit, AfterViewInit {
 
   public loadData(): void {
     this.service.obterVagasVagasRequisitos().subscribe((data: any) => {
+      debugger;
       this.dataSource.data = data;
     });
   }
