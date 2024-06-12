@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Entrevista } from '../models/Entrevista';
 import { Candidato } from '../models/Candidato';
 import { TecnologiaEntrevista } from '../models/TecnologiaEntrevista';
+import { EntrevistaVaga } from '../models/EntrevistaVaga';
 
 @Injectable({
     providedIn: 'root'
@@ -26,5 +27,13 @@ export class ServiceRh {
     adicionarEmtrevistaTecnologia(tecnologia: any): Observable<Entrevista> {
         return this.http.post<Entrevista>(this.apiUrl + '/Tecnologia/cadastrar', tecnologia);
     }
+
+
+    adicionarConfigurarEntrevista(entrevistaVaga: EntrevistaVaga): Observable<Entrevista> {
+        debugger;
+        const url = `${this.apiUrl}/${'Vaga/candidato/'}${entrevistaVaga.idVaga}/${entrevistaVaga.idCandidato}`;
+        return this.http.post<Entrevista>(url, entrevistaVaga.idsTecnologia);
+    }
+
 
 }

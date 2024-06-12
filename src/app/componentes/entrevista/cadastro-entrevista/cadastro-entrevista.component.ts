@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { AbstractType, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { VagaService } from '../../../../services/vagaService';
 import { MatDialogRef } from '@angular/material/dialog';
 import { TecnologiaService } from '../../../../services/tecnologiaService';
 import { ServiceRh } from '../../../../services/serviceRh';
+import { EntrevistaVaga } from '../../../../models/EntrevistaVaga';
 
 @Component({
   selector: 'app-cadastro-entrevista',
@@ -55,6 +56,14 @@ export class CadastroEntrevistaComponent implements OnInit {
 
   onSubmit() {
 
+    const entrevistaConfig: any = {
+      idCandidato: this.selectedCandidato,
+      idVaga: this.selectedVaga,
+      idsTecnologia: [this.selectedTecnologia] 
+    };
+    this.serviceRh.adicionarConfigurarEntrevista(entrevistaConfig).subscribe(data => {
+
+    });
   }
   onCancel(): void {
     this.dialogRef.close();
