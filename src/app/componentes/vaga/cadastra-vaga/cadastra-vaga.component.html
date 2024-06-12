@@ -1,1 +1,20 @@
-<p>cadastra-vaga works!</p>
+<h1 mat-dialog-title class="modal-header">Cadastrar Vaga</h1>
+<div mat-dialog-content class="modal-content">
+    <form [formGroup]="vagaForm" (ngSubmit)="onSubmit()">
+
+        <mat-form-field>
+            <mat-label>Título</mat-label>
+            <input matInput formControlName="titulo">
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Descrição</mat-label>
+            <input matInput formControlName="descricao">
+        </mat-form-field>
+        
+    </form>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onCancel()">Cancelar</button>
+    <button mat-button (click)="onSubmit()" [disabled]="!vagaForm.valid">Salvar</button>
+</div>

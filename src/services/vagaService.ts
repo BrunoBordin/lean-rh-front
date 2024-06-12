@@ -26,7 +26,7 @@ export class VagaService {
     return this.http.put<VagaTecnologiaRequisito>(url, vagaTecnologiaRequisito);
   }
   excluirVaga(vaga: Vaga): Observable<void> {
-    console.log("idididi: " + vaga.id);
+  
     const url = `${this.apiUrl}/Vaga/deletar/${vaga.id}`;
     console.log("url: " + url);
     return this.http.delete<void>(url);
@@ -35,5 +35,10 @@ export class VagaService {
   obterVagas(): Observable<Vaga[]> {
     const url = `${this.apiUrl}/${'Vaga/listar'}`;
     return this.http.get<Vaga[]>(url);
+  }
+
+  adicionarVaga(vaga: Vaga): Observable<Vaga> {
+    vaga.aberta =true;
+    return this.http.post<Vaga>(this.apiUrl + '/Vaga/cadastrar', vaga);
   }
 }

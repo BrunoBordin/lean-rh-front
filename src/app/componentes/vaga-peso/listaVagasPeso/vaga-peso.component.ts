@@ -3,7 +3,6 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { VagaService } from '../../../../services/vagaService';
 import { MatPaginator } from '@angular/material/paginator';
-import { CadastraVagaPesoComponent } from '../cadastra-vaga-peso/cadastra-vaga-peso.component';
 import { EditVagaPesoComponent } from '../edit-vaga-peso/edit-vaga-peso.component';
 
 @Component({
@@ -28,15 +27,6 @@ export class VagaPesoComponent implements OnInit, AfterViewInit {
     this.dataSource.paginator = this.paginator;
   }
 
-  openDialog(): void {
-    const dialogRef = this.dialog.open(CadastraVagaPesoComponent, {
-      width: '400px'
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      this.recarregar();
-    });
-  }
   openDialogEdit(element: any): void {
     const dialogRef = this.dialog.open(EditVagaPesoComponent, {
       width: '400px',

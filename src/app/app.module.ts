@@ -21,7 +21,6 @@ import { ModalCadastroTecnologiaComponent } from './componentes/tecnologia/cadas
 import { ReactiveFormsModule } from '@angular/forms';
 import { ModalEditarTecnologiaComponent } from './componentes/tecnologia/editar/editar.component'
 import { EditVagaPesoComponent } from './componentes/vaga-peso/edit-vaga-peso/edit-vaga-peso.component';
-import { CadastraVagaPesoComponent } from './componentes/vaga-peso/cadastra-vaga-peso/cadastra-vaga-peso.component';
 import { VagaPesoComponent } from './componentes/vaga-peso/listaVagasPeso/vaga-peso.component';
 import { ListaEntrevistaComponent } from './componentes/entrevista/lista-entrevista/lista-entrevista.component';
 import { CadastroEntrevistaComponent } from './componentes/entrevista/cadastro-entrevista/cadastro-entrevista.component';
@@ -42,7 +41,6 @@ import { CadastraVagaComponent } from './componentes/vaga/cadastra-vaga/cadastra
         , ModalCadastroTecnologiaComponent
         , ModalEditarTecnologiaComponent
         , EditVagaPesoComponent
-        , CadastraVagaPesoComponent
         , VagaPesoComponent
         , CadastroEntrevistaComponent
         , RelatorioComponent
